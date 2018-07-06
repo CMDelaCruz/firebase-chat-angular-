@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="signUpCard">
+      <div class="row">
+          <form>
+            <div class="input-field col s6">
+              <div class="row">
+                <input type="text" id="displayName" name="displayName" class="validate" [(ngModel)]="displayName">
+                <label for="name">Name</label>
+              </div>
+              <div class="row">
+                <input type="email" id="email" name="email" class="validate" [(ngModel)]="email">
+                <label for="email">Email</label>
+              </div>
+              <div class="row">
+                <input type="password" id="password" name="password" class="validate" [(ngModel)]="password" minlength="8">
+                <label for="password">Password</label>
+              </div>
+              <button class="btn waves-effect waves-light" type="submit" name="action" (click)="signUp()">Submit
+                  <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+  </div>
+</div>
