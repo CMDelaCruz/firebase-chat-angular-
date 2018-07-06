@@ -1,13 +1,9 @@
-<div class="messageContainer">
-  <div class="messageData">
-    <span class="sender">
-        <p>{{ userName }}</p>
-    </span>
-    <span class="timestamp">
-        <p>{{ timeStamp }}</p>
-    </span>
-    <span class="messageContent">
-        <p>{{ messageContent }}</p>
-    </span>
-  </div>
+<div class="row">
+    <div class="col s2 info">
+        <p id="user">{{ userName }}</p>
+        <p id="timeStamp">{{ timeStamp }}</p>
+    </div>
+    <div class="col s10">
+        <p id="content">{{ messageContent }}</p>
+   </div>            
 </div>

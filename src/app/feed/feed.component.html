@@ -1,5 +1,12 @@
-<div class="feed">
+<!-- <div class="feed">
   <div *ngFor="let message of feed | async" class="message">
     <app-message [chatMessage]="message"></app-message>
   </div>
-</div>
+</div> -->
+
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let message of feed | async">
+    <img src="../../assets/img/user.png" alt="" class="circle">
+    <app-message [chatMessage]="message"></app-message>
+  </li>
+</ul>

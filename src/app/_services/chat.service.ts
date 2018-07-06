@@ -19,20 +19,18 @@ export class ChatService {
   constructor(private afd: AngularFireDatabase, private afa: AngularFireAuth) {
     this.afa.authState.subscribe(auth => {
       if (auth !== undefined && auth !== null) {
+        this.user = auth;
         this.userId = auth.uid;
         this.email = auth.email;
+        this.getUser(this.userId).subscribe(res => {
+          this.userName = res.displayName;
+        });
       }
-    });
-
-    this.getUser(this.userId).subscribe(res => {
-      this.userName = res.displayName;
-      console.log(res);
     });
   }
 
   getUser(userId) {
-    const path = `users/${userId}`;
-
+    const path = 'users/' + userId;
     return this.afd.object(path);
   }
 
@@ -43,7 +41,6 @@ export class ChatService {
 
   sendMessage(message) {
     const timestamp = this.getTimeStamp();
-    console.log(this.userName);
     this.chatMessages = this.getMessages();
     this.chatMessages.push({
       message: message,

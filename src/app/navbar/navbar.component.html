@@ -1,3 +1,19 @@
-<div class="navbody">
-  <p>this works</p>
-</div>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Base Chat</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
+      </li>
+      <li>
+        <a *ngIf="!(user|async)?.uid" href="" routerLink="/signup">Sign Up</a>
+      </li>
+      <li>
+        <span id="userEmail" *ngIf="(user|async)?.uid">Hello, {{ userEmail }}</span>
+      </li>
+      <li>
+        <a *ngIf="(user|async)?.uid" href="#" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
