@@ -1,4 +1,4 @@
-<div class="row">
+<div [ngClass]="{'usOwnMessageContainer': isOwnMessage}">
     <div class="col s2 info">
         <p id="user">{{ userName }}</p>
         <p id="timeStamp">{{ timeStamp }}</p>
